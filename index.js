@@ -9,8 +9,8 @@ const port = 3000
 connectionDB()
 
 app.use(passport.initialize())
+app.use(passport.session())
 
 app.use("/api/user/", UserRouter)
 
-app.get('/', (req, res) => res.send('Hello World!'))
 app.listen(port, () => console.log(`app listening on port ${port}!`))
